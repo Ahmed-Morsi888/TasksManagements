@@ -5,6 +5,7 @@ export const routes: Routes = [
   {
     path: '',
     component: WrapperLayout,
+
     children: [
       {
         path: 'dashboard',
@@ -18,7 +19,7 @@ export const routes: Routes = [
       {
         path: 'notifications',
         loadChildren: () =>
-          import(`./Features/notification/notification.routes`).then((m) => m.NOTIFICATION_ROUTES),
+          import(`./Features/notifications/notification.routes`).then((m) => m.NOTIFICATION_ROUTES),
       },
       {
         path: 'tasks',
