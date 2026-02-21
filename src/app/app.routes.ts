@@ -7,11 +7,6 @@ export const routes: Routes = [
     component: WrapperLayout,
     children: [
       {
-        path: '',
-        redirectTo: `dashboard`,
-        pathMatch: `full`,
-      },
-      {
         path: 'dashboard',
         loadChildren: () =>
           import(`./Features/dashboard/dashboard.routes`).then((m) => m.dashboard_route),

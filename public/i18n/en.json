@@ -1,0 +1,15 @@
+{
+     "title":"Task Flow",
+    "routes":{
+        "dashboard":"Dashboard",
+        "tasks":"Tasks",
+        "emails":"Emails",
+        "calender":"Calender",
+        "projects":"Projects",
+        "notification":"Notification",
+        "setting":"Setting",
+        "logout":"Logout"
+    }
+
+    
+}
