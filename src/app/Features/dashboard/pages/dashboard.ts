@@ -5,6 +5,5 @@ import { TranslocoDirective } from '@jsverse/transloco';
   selector: 'app-dashboard',
   imports: [TranslocoDirective],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
 })
 export class Dashboard {}

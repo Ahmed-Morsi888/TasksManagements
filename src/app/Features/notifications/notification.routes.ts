@@ -6,9 +6,6 @@ export const NOTIFICATION_ROUTES: Routes = [
   {
     path: '',
     component: Notifications,
-    providers: [
-      provideTranslocoScope(`notifications`),
-      provideTranslocoScope('notifications', { scope: 'shared', alias: 'sharedAlias' }),
-    ],
+    providers: [provideTranslocoScope(`notifications`)],
   },
 ];

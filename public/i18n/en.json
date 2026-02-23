@@ -1,5 +1,9 @@
 {
+    "navtitle2":"Be Confidence",
+    "num":"2",
      "title":"Task Flow",
+     "navtitle":"welcom Back Ahmed",
+     "subnavtitle":"I hope you have a productive day",
     "routes":{
         "dashboard":"Dashboard",
         "tasks":"Tasks",

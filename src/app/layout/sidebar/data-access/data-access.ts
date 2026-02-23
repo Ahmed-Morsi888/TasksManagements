@@ -33,7 +33,7 @@ export const routes = [
 
 export const items = [
   {
-    url: `login`,
+    url: `logout`,
     label: 'routes.logout',
     icon: `pi pi-sign-out`,
   },

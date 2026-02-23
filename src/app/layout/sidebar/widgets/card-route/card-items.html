@@ -1,26 +1,26 @@
-<nav>
+<ng-container>
 
 <section class="flex flex-col gap-2 justify-center  p-2 "[ngClass]="{`items-center`:iscollapsed()}">
 @for(item of items(); track $index){
 
     @if(iscollapsed()){
     
-    <div class="text-xl">
-         <a [ngClass]="color" class="flex  px-2 py-2 rounded-lg items-center gap-2 text-lg robbot font-semibold  cursor-pointer   " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="item.url" [routerLinkActive]="colorActive">
+    <ng-container *appRoleDirective="item.url">
+         <a  [ngClass]="[color,`flex  px-2 py-2 rounded-lg items-center gap-2 text-lg robbot font-semibold  cursor-pointer`]" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="item.url" [routerLinkActive]="colorActive">
 
     <i [class]="item.icon"></i>
     
 </a>
-    </div>      
+    </ng-container>      
     }@else {
 
-    <div>
-    <a [ngClass]="color"  class="flex  px-2 py-2 rounded-lg items-center gap-2 text-sm robbot font-semibold  cursor-pointer   " [routerLinkActiveOptions]="{ exact: true }" [routerLink]="item.url" [routerLinkActive]="colorActive">
+    <ng-container *appRoleDirective="item.url">
+    <a   [ngClass]="[color,`flex  px-2 py-2 rounded-lg items-center gap-2 text-sm robbot font-medium  cursor-pointer`]" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="item.url" [routerLinkActive]="colorActive">
 
     <i [class]="item.icon"></i>
     <span *transloco="let t">{{t(item.label)}}</span>
 </a>
-</div>
+</ng-container>
 
     }
 
@@ -29,4 +29,4 @@
 </section>
 
 
-</nav>
+</ng-container>

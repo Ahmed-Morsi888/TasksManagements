@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<nav  class="bg-gray-100  shadow-sm ">
+
+    <section class="px-6 py-3 flex justify-between items-center  ">
+        <div class="flex flex-col  ">
+            <h2 class=" rubik text-lg lg:text-2xl font-bold  " *transloco="let t">{{t(`navtitle`)}}</h2>
+                <p class="font-medium rubik text-gray-500 text-xs  lg:text-sm "*transloco="let t">{{t(`subnavtitle`)}}</p>
+        </div>
+        <div class="flex items-center gap-6  ">
+        <div class=" border-2 border-gray-300 rounded-xl px-2 ">
+
+            <i class="pi pi-search text-gray-400 text-sm"></i>
+            <input type="text" placeholder="search..." class="rubik px-2 py-1 outline-none w-30 lg:w-40">
+        </div>
+        <div class="relative">
+        <i class="pi pi-bell text-xl"></i>
+        <span class= "w-4 h-4  bg-blue-500 rounded-xl text-xs flex justify-center items-center absolute bottom-4 left-3" *transloco="let t"> {{t(`num`)}}</span>
+        </div>
+        <div class="w-10 h-10 rounded-3xl bg-gray-300 ">
+       <img class="rounded-3xl " src="/pic1.jpg" alt="user photo">
+        </div>
+        <div class="hidden flex-col  lg:flex ">
+        <h3 class="text-lg font-bold rubik " *transloco="let t">{{t(`navtitle2`)}}</h3>
+        <span class="text-gray-400 text-xs font-medium rubik"  >ahmedmorsi@gmail.com </span>
+        </div>
+        </div>
+    </section>
+    <hr class="text-gray-300  ">
+
+</nav>

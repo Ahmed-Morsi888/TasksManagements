@@ -4,6 +4,7 @@ import { NgClass } from '@angular/common';
 import { items, routes } from './data-access/data-access';
 import { SwitchLang } from './widgets/switch-lang/switch-lang';
 import { TranslocoDirective } from '@jsverse/transloco';
+import { RoleDirective } from '../../Core/directives/role-directive';
 
 @Component({
   selector: 'app-sidebar',
