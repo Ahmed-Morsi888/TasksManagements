@@ -29,6 +29,7 @@ body{
 
 }
 .p-drawer-full{
+    
     padding: 8px !important;
     width: 50%;
     height: 50%;
@@ -39,6 +40,7 @@ body{
 
 .p-drawer {
 
+    
     background-color: rgb(236, 241, 241) !important;
     width: 30% !important;
     height: 50% !important;
