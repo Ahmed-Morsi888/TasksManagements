@@ -1,0 +1,22 @@
+
+<ng-container *transloco="let t;scope:'dashboard'">
+    <div class="px-3 flex gap-6 w-full justify-center ">
+
+        @for(item of data();track $index){
+            <section class="rubik flex flex-col  w-1/5 gap-2 p-4 bg-gray-100 rounded-lg shadow-sm "> 
+                <div class="flex gap-2 text-md items-center font-medium "> 
+                    <h4 class="text-gray-400 " >{{t(item.title)}}</h4>
+                    <div class="flex gap-1 ">
+                        <i class="pi pi-angle-up text-green-500 text-sm"></i>
+                        <span class="text-sm font-semibold" >{{item.num|localNumber}}</span>
+                    </div>
+                </div>
+                <div>
+
+                    <span class="text-xl font-bold">{{item.current |localNumber}}</span>
+                </div>
+            </section>
+            
+        }
+    </div>
+</ng-container>

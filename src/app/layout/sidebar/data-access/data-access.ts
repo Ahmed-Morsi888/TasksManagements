@@ -1,6 +1,6 @@
 export const routes = [
   {
-    url: ``,
+    url: `dashboard`,
     label: 'routes.dashboard',
     icon: `pi pi-home`,
   },

@@ -1,5 +1,8 @@
 {
-
-    "title":"الصفحة الرئيسية "
+  "totalProject": "إجمالي المشاريع",
+  "totalTasks": "إجمالي المهام",
+  "inprogress": "قيد التنفيذ",
+  "pending": "قيد الانتظار",
+  "completed": "مكتمل"
 
 }

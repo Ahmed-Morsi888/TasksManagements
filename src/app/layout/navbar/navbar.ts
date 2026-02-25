@@ -2,6 +2,7 @@ import { Iuser } from './../../services/user-service';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { UserService } from '../../services/user-service';
 import { TranslocoDirective } from '@jsverse/transloco';
+import { DecimalPipe } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   imports: [TranslocoDirective],

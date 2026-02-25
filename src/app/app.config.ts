@@ -17,6 +17,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(withFetch()),
+
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(),

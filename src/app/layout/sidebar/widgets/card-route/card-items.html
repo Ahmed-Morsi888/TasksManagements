@@ -1,12 +1,12 @@
 <ng-container>
 
-<section class="flex flex-col gap-2 justify-center  p-2 "[ngClass]="{`items-center`:iscollapsed()}">
+<section class="flex flex-col gap-2 justify-center p-4 "[ngClass]="{`items-center`:iscollapsed()}">
 @for(item of items(); track $index){
 
     @if(iscollapsed()){
     
     <ng-container *appRoleDirective="item.url">
-         <a  [ngClass]="[color,`flex  px-2 py-2 rounded-lg items-center gap-2 text-lg robbot font-semibold  cursor-pointer`]" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="item.url" [routerLinkActive]="colorActive">
+         <a  [ngClass]="[color,`flex  px-2 py-2  rounded-lg items-center gap-2 text-lg robbot font-semibold  cursor-pointer`]" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="item.url" [routerLinkActive]="colorActive">
 
     <i [class]="item.icon"></i>
     

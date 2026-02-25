@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { TranslocoDirective } from '@jsverse/transloco';
+import { HeaderDashboard } from '../components/header-dashboard/header-dashboard';
+import { HeaderCard } from '../components/header-card/header-card';
+import { CardBody } from '../components/card-body/card-body';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [TranslocoDirective],
+  imports: [HeaderDashboard, HeaderCard, CardBody],
   templateUrl: './dashboard.html',
 })
 export class Dashboard {}

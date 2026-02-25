@@ -1,0 +1,26 @@
+        <section class=" flex px-4 py-3 justify-between items-center border-b-1 border-gray-200  rubikx  ">
+        <div class="text-xl font-medium "> <h2>{{title()}}</h2> </div>
+        <div class="flex items-center gap-2">
+            <div class="bg-gray-200 px-2 py-1 ">
+                <button class="cursor-pointer  text-xs font-medium text-gray-400 flex items-center gap-1"> {{text()}} <i class="pi pi-sort text-xs "></i></button>
+            </div>
+            <div class="cursor-pointer  w-7 h-7 rounded-lg bg-gray-200 flex justify-center items-center "><i class="pi pi-ellipsis-v text-sm text-gray-400 "></i></div>
+            
+            @if(AddIcon()){
+                <div class=" transition-all duration-300 cursor-pointer hover:bg-blue-400 w-7 h-7 rounded-lg bg-blue-500 flex justify-center items-center "> <div class="card flex justify-center items-center ">
+                    <p-drawer header="Add Assignment" [(visible)]="visible" [fullScreen]="true">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+                    </p-drawer>
+                    <p-button (click)="visible = true" icon="pi pi-plus text-white " />
+                </div></div>
+            }
+        </div>
+        
+    </section>
+
+    
+       
+   

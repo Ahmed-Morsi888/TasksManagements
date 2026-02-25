@@ -1,5 +1,8 @@
 {
-
-"title":"dashboard page"
+"totalProject":"Total Project",
+"totalTasks":"Total Tasks",
+"inprogress":"Inprogress",
+"pending":"Pending",
+"completed":"Completed"
 
 }
