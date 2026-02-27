@@ -1,14 +1,72 @@
 {
-    "user":{
-        "name":"Ahmed",
-        "role":"user",
-        "permisions":["dashboard","tasks","notifications","calender","logout"]
+  "user": {
+    "name": "Ahmed",
+    "role": "user",
+    "permisions": [
+      "dashboard",
+      "tasks",
+      "notifications",
+      "calender",
+      "logout"
+    ]
+  },
+  "overViewHeader": [
+    {
+      "title": "dashboard.totalProject",
+      "num": 2,
+      "current": 7
     },
-    "overViewHeader":[{"title":"dashboard.totalProject","num":2,"current":7},
-    {"title":"dashboard.totalTasks","num":4,"current":25},
-    {"title":"dashboard.inprogress","num":3,"current":10},
-    {"title":"dashboard.pending","num":3,"current":5},
-    {"title":"dashboard.completed","num":2,"current":8}
-]
-
+    {
+      "title": "dashboard.totalTasks",
+      "num": 4,
+      "current": 25
+    },
+    {
+      "title": "dashboard.inprogress",
+      "num": 3,
+      "current": 10
+    },
+    {
+      "title": "dashboard.pending",
+      "num": 3,
+      "current": 5
+    },
+    {
+      "title": "dashboard.completed",
+      "num": 2,
+      "current": 8
+    }
+  ],
+  "allTasks": [
+    {
+      "taskName": "mobile ",
+      "description": "sdsxscscsdcsdcsdvsdcds",
+      "duration": "4 week",
+      "priority": "Done",
+      "status": "Done",
+      "createAt": "2026-02-13",
+      "dueDate": "2026-03-01",
+      "id": "3a10"
+    },
+    {
+      "id": "e030",
+      "taskName": "mobile application",
+      "description": "sdsxscscsdcsdcsdvsdcds",
+      "duration": "4 week",
+      "priority": "Done",
+      "status": "Done",
+      "createAt": "2026-02-27",
+      "dueDate": "2026-02-28"
+    },
+    {
+      "id": "d10c",
+      "taskName": "asddasdasdsada",
+      "description": "vfdvfvdvfvfvdvdvdf",
+      "duration": "dscsdc",
+      "priority": "Done",
+      "status": "Planed",
+      "createAt": "2026-02-03",
+      "dueDate": "2026-02-07"
+    }
+  ]
 }

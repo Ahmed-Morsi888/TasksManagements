@@ -1,53 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
 
 
-@import "primeicons/primeicons.css";
 @import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
 
-body{
-    scroll-behavior: smooth;
-}
-.scroll{
-    scrollbar-width: none;
 
+body {
+  scroll-behavior: smooth;
 }
-.scroll::-webkit-scrollbar{
-    display: none;
+
+.scroll {
+  scrollbar-width: none;
 }
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .robbot {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .rubik {
-    font-family: "Rubik", sans-serif;
-}
-.p-overlay-mask{
-    position: relative !important;
-}
-.p-drawer-header{
-
-
-}
-.p-drawer-full{
-    
-    padding: 8px !important;
-    width: 50%;
-    height: 50%;
-    background-color: aqua;
-    top: 26% !important;
-    left: 39% !important;
+  font-family: "Rubik", sans-serif;
 }
 
+/* Custom dialog tweaks if needed */
 .p-drawer {
-
-    
-    background-color: rgb(236, 241, 241) !important;
-    width: 30% !important;
-    height: 50% !important;
-
-
-}
-.p-drawer-left {
- 
-    border-inline-end-width:0px !important;
+  background-color: rgb(236, 241, 241) !important;
 }

@@ -1,0 +1,133 @@
+
+
+<section class="flex flex-col gap-4 robbot">
+  <div class="flex justify-between items-center">
+    <h2 class="text-2xl   ">Tasks</h2>
+    <app-add-button></app-add-button>
+  </div>  
+<p-table 
+  [value]="allTasks()" 
+  [(selection)]="selectedProducts" 
+  dataKey="id"
+  selectionMode="multiple">
+
+  <ng-template #header>
+    <tr>
+      <th style="width:4rem">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th>Code</th>
+      <th>Task Name</th>
+      <th>Duration</th>
+      <th>Priority</th>
+      <th>CreateAt</th>
+      <th>Due Date</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </ng-template>
+
+  <ng-template #body let-task>
+    <tr>
+      <td>
+        <p-tableCheckbox [value]="task"></p-tableCheckbox>
+      </td>
+      <td>{{ task.id }}</td>
+      <td>{{ task.taskName }}</td>
+      <td>{{ task.duration }}</td>
+      <td>{{ task.priority }}</td>
+      <td>{{ task.createAt }}</td>
+      <td>{{ task.dueDate }}</td>
+      <td>
+            <div class="flex gap-1 items-center ">
+                {{ task.status }}
+                <div class="w-2 h-2 rounded-xl" [ngClass]="task.status === 'Done' ? 'bg-green-500' : task.status===`inprogress` ? `bg-yellow-300`: 'bg-red-500'"></div>
+            </div>
+      </td>
+
+            <td>
+                <div class="flex gap-2">
+                    
+                    <button (click)="update(task)" class="w-20 bg-yellow-300 py-1 px-2 rounded-lg cursor-pointer hover:bg-yellow-400"> Update</button>
+                    <button (click)="deleteItem(task.id)" class="w-20 bg-red-500 py-1 px-2 rounded-lg cursor-pointer hover:bg-red-600">Delete</button>
+                </div>
+            </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+    
+    <!-- <div class="flex justify-between items-center gap-3  bg">
+        <div class="flex gap-3">
+
+            <select class="bg-gray-200 rubik font-medium p-2 border-2 border-gray-400 rounded-lg " name="status filter"
+                id="status filter">
+                <option value="All">Select status</option>
+                <option value="Done">Done</option>
+                <option value="inprogress">Inprogress</option>
+                <option value="pending">Pending</option>
+            </select>
+            <select class="bg-gray-200 value rubik font-medium p-2 border-2 border-gray-400 rounded-lg "
+                name="priority filter" id="priority filter">
+                <option value="">Select priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div>
+            <button class="w-30 h-10 bg-amber-500 px-3 py-1 rounded-lg rubik font-medium">Add Filter</button>
+        </div>
+    </div>
+
+
+
+
+    <div class="w-fu">
+
+        <table class="w-full ">
+            <thead class="bg-gray-300 border-b-2 border-gray-500 robbot  ">
+
+                <tr>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Task Name</th>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Duration</th>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Priority</th>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Create Date</th>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Due Date</th>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Status</th>
+                    <th class="p-3 text-md font-semibold tracking-wide text-left">Action</th>
+                </tr>
+            </thead>
+            <tbody class="bg-gray-100 ">
+                @for (item of allTasks(); track $index) {
+
+                <tr class="hover:bg-gray-400 cursor-pointer robbot font-medium ">
+                    <td class="p-3 text-gray-800 text-md ">{{item.taskName}} </td>
+                    <td class="p-3 text-gray-800 text-md">{{ item.duration }}</td>
+                    <td class="p-3 text-gray-800 text-md">{{ item.priority }}</td>
+                    <td class="p-3 text-gray-800 text-md">{{ item.creatData }}</td>
+                    <td class="p-3 text-gray-800 text-md">{{ item.dueDate }}</td>
+
+                    <td class="p-3 text-gray-800    text-md"><span
+                            [ngClass]="{ ` bg-green-500`:item.status==`Done`,`bg-red-600`:item.status==`pending`,`bg-yellow-300`:item.status==`inprogress`}"
+                            class=" p-2 rounded-xl  text-sm uppercase  ">{{ item.status }}</span></td>
+
+                    <td class=" flex gap-2 items-center mt-1">
+                        <button
+                            class="bg-red-600 px-3 w-18 h-9 py-1 cursor-pointer hover:bg-red-500 rounded-xl text-md font-semibold">
+                            Delete
+                        </button>
+                        <button
+                            class="bg-yellow-300 px-3 py-1 cursor-pointer hover:bg-yellow-200 rounded-xl text-md font-semibold">
+                            Update
+                        </button>
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div> -->
+</section>
