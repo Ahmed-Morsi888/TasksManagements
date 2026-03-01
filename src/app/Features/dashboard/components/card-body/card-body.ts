@@ -1,7 +1,8 @@
-import { IallTasks } from './../../../tasks/service/tasks-service';
 import { NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, input, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
+import { TasksService } from '../../../../services/tasks-service';
+import { CardItem } from '../../pages/dashboard';
 
 export interface Idata {
   headertext: string;
@@ -16,6 +17,7 @@ export interface Idata {
 })
 export class CardBody implements OnInit {
   http = inject(HttpClient);
+  tasksService = inject(TasksService);
   leftIcon = input<boolean>(true);
   rightIcon = input<boolean>(true);
   footerTextIcon = input<boolean>(true);
@@ -23,15 +25,10 @@ export class CardBody implements OnInit {
   classes = input<string>('');
   stylebox = input<string>('');
 
-  allTasks = signal<IallTasks[]>([]);
-  ngOnInit(): void {
-    this.getTasks();
-  }
-  getTasks() {
-    this.http.get<IallTasks[]>(`http://localhost:3000/allTasks`).subscribe({
-      next: (res) => {
-        this.allTasks.set(res);
-      },
-    });
-  }
+  type = input<'tasks' | 'projects'>('tasks');
+  items = input<CardItem[]>([]);
+
+  ngOnInit(): void {}
+
+  dateLabel = input<string>('Date');
 }

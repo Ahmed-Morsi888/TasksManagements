@@ -1,0 +1,107 @@
+<div class="card flex justify-center">
+
+    <p-button (click)="showDialog()" severity="info" [label]=label() />
+    
+    <p-dialog  header="Project" [modal]="true" focusOnShow="false"  [visible]="visible" [style]="{ width: '28rem' }">
+        <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit(addProjectForm)">
+            <span class="p-text-secondary block mb-6">Add information Project</span>
+            
+            <div class="flex flex-col justify-center items-start gap-2">
+                <div class="flex flex-col gap-1 mb-4">
+                    <div class="flex items-center gap-2">
+                        <label for="projectName" class="font-semibold w-25">Project name</label>
+                        <input type="text" formControlName="projectName" id="projectName" name="projectName"
+                        class="p-2 border-2 w-68 border-gray-400 rounded-lg" />
+                    </div>
+                    <div>
+                            @if (
+                                addProjectForm.get(`projectName`)?.getError('required') && addProjectForm.get(`projectName`)?.touched
+                            ) {
+                            <p class="text-red-500 mt-1 text-sm">Project name is required</p>
+                        }
+                    </div>
+                </div>
+                <div class="flex flex-col mb-4">
+                    <div class="flex items-center mb-4 gap-2">
+                        <label for="priority" class="font-semibold w-25">Priority</label>
+                        <select formControlName="priority" class="p-2 border-2 w-68 border-gray-400 rounded-lg" name="priority"
+                        id="priority">
+                        <option class="text-gray-300" value="">select priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+                @if (addProjectForm.get(`priority`)?.getError('required') && addProjectForm.get(`priority`)?.touched) {
+                    <p class="text-red-500 mt-1 text-sm">Priority is required</p>
+                }
+            </div>
+             
+                
+                <div class="flex flex-col mb-4">
+                    <div class="flex items-center mb-4 gap-2">
+                        <label for="status" class="font-semibold w-25">Status</label>
+                        <select formControlName="status" class="p-2 border-2 w-68 border-gray-400 rounded-lg" name="status"
+                        id="status">
+                        <option class="text-gray-300" value="">select status</option>
+                        <option value="Done">Done</option>
+                        <option value="Inprogress">Inprogress</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Planed">Planed</option>
+                    </select>
+                </div>
+                @if (addProjectForm.get(`status`)?.getError('required') && addProjectForm.get(`status`)?.touched) {
+                    <p class="text-red-500 mt-1 text-sm">Status is required</p>
+                }
+            </div>
+               
+           
+        <div class="flex flex-col mb-4">
+            <div class="flex items-center gap-2">
+                <label for="duration" class="font-semibold w-25">Duration</label>
+                <input placeholder="2 weeks/days/Hours" type="text" formControlName="duration" id="duration" name="duration"
+                class="p-2 border-2 w-68 border-gray-400 rounded-lg" />
+            </div>
+            @if (addProjectForm.get(`duration`)?.getError('required') && addProjectForm.get(`duration`)?.touched) {
+                <p class="text-red-500 mt-1 text-sm">Duration is required</p>
+            }
+        </div>
+        
+        <div class="flex flex-col mb-4">
+            <div class="flex items-center mb-4 gap-2">
+                <label for="createAt" class="font-semibold w-25">createAt</label>
+                <input type="date" formControlName="createAt" id="createAt"
+                class="p-2 border-2 w-68 border-gray-400 rounded-lg" />
+            </div>
+            @if (
+                addProjectForm.get(`createAt`)?.getError('required') && addProjectForm.get(`createAt`)?.touched
+            ) {
+                <p class="text-red-500 mt-1 text-sm">Create data is required</p>
+            }
+        </div>
+        
+        <div class="flex gap-2 ms-auto">
+            <button type="reset"
+            class="w-20 py-2 font-medium bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-gray-900">
+            reset
+        </button>
+        <button  type="submit"
+            class="w-20 py-2 font-medium bg-gray-50 text-black rounded-lg hover:bg-gray-900 hover:text-white cursor-pointer">  submit
+        </button>
+    
+</div>
+</div>
+</form>
+</p-dialog>
+</div>
+
+
+
+<!-- @if(updatemode()){
+            <button  type="submit"
+            class="w-20 py-2 font-medium bg-gray-50 text-black rounded-lg hover:bg-gray-900 hover:text-white cursor-pointer" >  Update  </button>
+        }@else {
+            <button  type="submit"
+            class="w-20 py-2 font-medium bg-gray-50 text-black rounded-lg hover:bg-gray-900 hover:text-white cursor-pointer">  submit
+        </button>
+    } -->

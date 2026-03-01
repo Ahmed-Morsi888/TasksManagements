@@ -8,14 +8,13 @@
             
             @if(AddIcon()){
                 <div class=" transition-all duration-300 cursor-pointer hover:bg-blue-400 w-7 h-7 rounded-lg bg-blue-500 flex justify-center items-center "> <div class="card flex justify-center items-center ">
-                    <p-drawer header="Add Assignment" [(visible)]="visible" [fullScreen]="true">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat.
-                        </p>
-                    </p-drawer>
-                    <p-button (click)="visible = true" icon="pi pi-plus text-white " />
-                </div></div>
+                    @if(typeAdd() === 'task') {
+                        <app-add-button label="+"></app-add-button>
+                    }@else if(typeAdd() === 'project') {
+                        <app-add-project-button label="+"></app-add-project-button>
+                    }                    
+                </div>
+            </div>
             }
         </div>
         

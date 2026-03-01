@@ -1,11 +1,11 @@
-import { IallTasks } from './../../../Features/tasks/service/tasks-service';
+import { IallTasks } from './../../../services/tasks-service';
 import { HttpClient } from '@angular/common/http';
-import { Component, effect, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, effect, inject, input } from '@angular/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
-import { TasksService } from '../../../Features/tasks/service/tasks-service';
+import { TasksService } from '../../../services/tasks-service';
 
 export interface Istatus {
   name: string;
@@ -14,18 +14,26 @@ export interface Istatus {
   selector: 'app-add-button',
   imports: [ButtonModule, DialogModule, InputTextModule, ReactiveFormsModule],
   templateUrl: './add-button.html',
-  styleUrl: './add-button.css',
 })
 export class AddButton {
+  label = input('');
+  form = input<string>('');
+
   tasksServic = inject(TasksService);
+
   visible = this.tasksServic.dialogeVisible;
   updatemode = this.tasksServic.isUpdateMode;
   showDialog() {
     this.visible.set(true);
   }
+
   http = inject(HttpClient);
   addTask = this.tasksServic.addTaskForm;
   selectedId = this.tasksServic.idTaskUpdate;
+
+  onDialogClose() {
+    this.addTask.reset();
+  }
   constructor() {
     effect(() => {
       const task = this.tasksServic.selectedTask();

@@ -1,5 +1,5 @@
-import { IallTasks, TasksService } from './../../service/tasks-service';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { IallTasks, TasksService } from '../../../../services/tasks-service';
+import { Component, inject, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
